@@ -236,6 +236,10 @@ var global = this
                 calculateSizes.call(pairs[i])
                 fitMinReverse.call(pairs[i])
             }
+
+            for (i = pairs.length - 1; i >= 0; i--) {
+                adjust.call(pairs[i],pairs[i].a[getBoundingClientRect]()[dimension])
+            }
         }
       , preventSelection = function () { return false }
       , parent = elementOrSelector(ids[0]).parentNode
