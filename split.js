@@ -342,6 +342,16 @@ var global = this
     }
 
     balancePairs(pairs)
+
+    return {
+        resize: function(size) {
+            adjust.call(pair, size);
+
+            if (options.onDrag) {
+                options.onDrag()
+            }
+        }
+    }
 }
 
 if (typeof exports !== 'undefined') {
